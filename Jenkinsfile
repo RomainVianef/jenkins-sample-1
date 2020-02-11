@@ -9,7 +9,7 @@ node () {
 	}
 	stage ('App-IC - Build') {
  			// Maven build step
-	withMaven(maven: 'maven') { 
+		withMaven(maven: 'maven') { 
  			if(isUnix()) {
  				sh "mvn clean package " 
 			} else { 
@@ -17,7 +17,6 @@ node () {
 			} 
  		} 
 	}
-}
 	stage ('App-IC - Quality Analysis') {
 		withMaven(maven: 'maven') {
 			if(isUnix()) {
