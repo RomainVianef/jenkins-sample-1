@@ -20,10 +20,11 @@ node () {
 	stage ('App-IC - Quality Analysis') {
 		withMaven(maven: 'maven') {
 			if(isUnix()) {
-				sh "mvn sonar:sonar"	
+				sh "mvn sonar:sonar "	
 			} else {
-				bat "mvn sonar:sonar"
+				bat "mvn sonar:sonar "
 			}
 		}
 	}
+}
 }
